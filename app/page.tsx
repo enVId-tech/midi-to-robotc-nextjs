@@ -107,7 +107,7 @@ export default function Home() {
         through the NXT brick's speaker using <code>PlayTone()</code>.
       </p>
 
-      <div
+      <label
         className={`dropzone${dragging ? " dragging" : ""}`}
         onDragOver={(e) => {
           e.preventDefault();
@@ -124,16 +124,16 @@ export default function Home() {
         <input
           type="file"
           accept=".mid,.midi"
+          style={{ display: "none" }}
           onChange={(e) => {
             const file = e.target.files?.[0];
             if (file) handleFile(file);
           }}
         />
         <div>
-          <span className="file-label">Click to upload</span> or drag a .mid
-          file here
+          <span className="file-label">Click to upload</span> or drag a .mid file here
         </div>
-      </div>
+      </label>
 
       {error && <div className="error">{error}</div>}
 
@@ -207,7 +207,7 @@ export default function Home() {
       </p>
 
       <p className="note">
-          Erick Tran, 2026, this project is open source and available on <a href="https://github.com/enVId-tech/midi-to-robotc-nextjs" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        Erick Tran, 2026, this project is open source and available on <a href="https://github.com/enVId-tech/midi-to-robotc-nextjs" target="_blank" rel="noopener noreferrer">GitHub</a>.
       </p>
     </main>
   );
